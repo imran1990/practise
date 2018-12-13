@@ -20,4 +20,17 @@ var items = [
      li.appendChild(textnode);
      return li;
  }
+ function clearUL(){
+    var ul=  document.querySelector(".item-list"); // the value inside the itemlist
+    ul.innerHTML="";
+ }
+ function handleEventclick(){
+    var inputvalue =document.querySelector("#new-item");//to get input field value
+    var value = inputvalue.value; // to set the value of input field value;
+   if (value) { // to check is value empty?
+       clearUL();  // to remove previous array items list.
+    items.push(value); 
+    AttachItems(items); }
+ }
+  document.querySelector("#Add-Item").addEventListener("click",handleEventclick); //this is for when i click the button
  AttachItems(items);
